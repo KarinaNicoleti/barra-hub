@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Barra Hub - Turismo em Barra Bonita</title>
+
+    <!-- Fonte e CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <!-- Cabeçalho -->
+    <header>
+        <div class="logo">Barra Hub</div>
+
+        <!-- Botão do menu mobile -->
+        <button class="menu-toggle" aria-label="Abrir menu">Menu</button>
+
+        <nav>
+            <ul>
+                <li><a href="#passeios">Passeios</a></li>
+                <li><a href="#restaurantes">Restaurantes</a></li>
+                <li><a href="#hoteis">Hotéis</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Seção principal -->
+    <section class="hero">
+        <h1>Descubra o melhor de Barra Bonita</h1>
+        <p>Passeios de barco, boa comida e o charme do interior paulista.</p>
+        <a href="#passeios" class="btn">Explorar</a>
+    </section>
+
+    <!-- Seção Passeios -->
+    <section id="passeios">
+        <h2>Passeios</h2>
+        <p>Conheça os famosos passeios de barco pelo rio Tietê e as eclusas.</p>
+        <div class="cards">
+            <div class="card">
+                <img src="assets/passeio1.jpg" alt="Passeio de barco">
+                <h3>Passeio de Barco</h3>
+                <p>Desfrute de um passeio de barco pelo Rio Tietê com paisagens incríveis.</p>
+                <a href="#" class="btn">Saiba mais</a>
+            </div>
+            <div class="card">
+                <img src="assets/passeio2.jpg" alt="Eclusa de Barra Bonita">
+                <h3>Eclusa de Barra Bonita</h3>
+                <p>Visite a famosa eclusa e aprenda sobre a história do transporte fluvial.</p>
+                <a href="#" class="btn">Saiba mais</a>
+            </div>
+            <div class="card">
+                <img src="assets/passeio3.jpg" alt="Natureza e trilhas">
+                <h3>Trilhas e Natureza</h3>
+                <p>Explore trilhas naturais e conheça a fauna e flora local.</p>
+                <a href="#" class="btn">Saiba mais</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Restaurantes -->
+    <section id="restaurantes">
+        <h2>Restaurantes</h2>
+        <p>Saboreie pratos deliciosos nos melhores restaurantes da cidade.</p>
+        <div class="cards">
+            <div class="card">
+                <img src="assets/restaurante1.jpg" alt="Restaurante típico">
+                <h3>Restaurante Típico</h3>
+                <p>Prove a culinária local com pratos caseiros e saborosos.</p>
+                <a href="#" class="btn">Saiba mais</a>
+            </div>
+            <div class="card">
+                <img src="assets/restaurante2.jpg" alt="Gastronomia internacional">
+                <h3>Gastronomia Internacional</h3>
+                <p>Experimente pratos internacionais sem sair de Barra Bonita.</p>
+                <a href="#" class="btn">Saiba mais</a>
+            </div>
+            <div class="card">
+                <img src="assets/restaurante3.jpg" alt="Cafés e lanches">
+                <h3>Cafés e Lanches</h3>
+                <p>Delicie-se com cafés especiais e lanches artesanais.</p>
+                <a href="#" class="btn">Saiba mais</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Hotéis -->
+    <section id="hoteis">
+        <h2>Hotéis</h2>
+        <p>Encontre hospedagens confortáveis com vista para o rio.</p>
+        <div class="cards">
+            <div class="card">
+                <img src="assets/hotel1.jpg" alt="Hotel confortável">
+                <h3>Hotel Central</h3>
+                <p>Hospede-se no coração da cidade com conforto e praticidade.</p>
+                <a href="#" class="btn">Saiba mais</a>
+            </div>
+            <div class="card">
+                <img src="assets/hotel2.jpg" alt="Pousada charmosa">
+                <h3>Pousada do Rio</h3>
+                <p>Charmosa pousada com vista para o Rio Tietê e excelente atendimento.</p>
+                <a href="#" class="btn">Saiba mais</a>
+            </div>
+            <div class="card">
+                <img src="assets/hotel3.jpg" alt="Hotel de luxo">
+                <h3>Hotel Luxo</h3>
+                <p>Experiência premium com serviços de primeira linha.</p>
+                <a href="#" class="btn">Saiba mais</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer id="contato">
+        <p>&copy; 2025 Barra Hub - Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- Script para o menu mobile -->
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navUl = document.querySelector('nav ul');
+
+        menuToggle.addEventListener('click', () => {
+            navUl.classList.toggle('show');
+            menuToggle.classList.toggle('open');
+        });
+    </script>
+</body>
+
+</html>

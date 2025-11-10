@@ -1,0 +1,281 @@
+/* ======= Fonte e estilo geral ======= */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    background-color: #f8f5ff;
+    /* lilás bem claro */
+    color: #333;
+}
+
+/* ======= Cabeçalho ======= */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #744068;
+    /* violeta principal */
+    color: white;
+    padding: 15px 40px;
+}
+
+header .logo {
+    font-size: 1.5em;
+    font-weight: 600;
+}
+
+/* ======= Navegação ======= */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+    transition: all 0.3s ease;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #744068;
+}
+
+/* ======= Botão do menu mobile ======= */
+.menu-toggle {
+    display: none;
+    /* desktop */
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 30px;
+    font-size: 1.1em;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    user-select: none;
+}
+
+.menu-toggle:hover {
+    background-color: rgba(236, 7, 236, 0.3);
+    border-color: #744068;
+    color: #744068;
+}
+
+.menu-toggle::before {
+    content: "☰";
+    display: inline-block;
+    margin-right: 8px;
+    font-size: 1.2em;
+    vertical-align: middle;
+    transition: transform 0.3s ease;
+}
+
+.menu-toggle.open::before {
+    content: "✕";
+    color: #744068;
+    transform: rotate(90deg);
+}
+
+/* ======= Hero (seção principal) ======= */
+.hero {
+    position: relative;
+    text-align: center;
+    background: 
+        linear-gradient(rgba(155, 48, 255, 0.25), rgba(155, 48, 255, 0.25)), 
+        url('assets/barra-bonita.jpg') center/cover no-repeat;
+    color: white;
+    padding: 120px 20px;
+    transition: background 0.5s ease; /* suaviza a transição */
+}
+
+/* Efeito ao passar o mouse */
+.hero:hover {
+    background: 
+        linear-gradient(rgba(155, 48, 255, 0.35), rgba(155, 48, 255, 0.35)), /* overlay mais intenso */
+        url('assets/barra-bonita.jpg') center/cover no-repeat;
+}
+
+
+.hero h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.btn {
+    background-color: #ffcc00;
+    color: #333;
+    padding: 10px 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background-color: #ffdb4d;
+}
+
+/* ======= Seções ======= */
+section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+section h2 {
+    color: #744068;
+    margin-bottom: 20px;
+}
+
+/* ======= Cards ======= */
+.cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.card {
+    background-color: #ffffff;
+    border: 1px solid #744068;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    width: 300px;
+    text-align: center;
+    padding: 25px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card img {
+    width: 100%;
+    height: 190px;
+    border-radius: 10px;
+    object-fit: cover;
+    margin-bottom: 15px;
+    /* espaço entre imagem e texto */
+}
+
+.card h3 {
+    color: #744068;
+    margin: 15px 0 10px;
+    font-size: 1.2em;
+}
+
+.card p {
+    font-size: 0.95em;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    color: #444;
+}
+
+.card .btn {
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 6px 14px rgba(134, 12, 108, 0.2);
+}
+
+/* ======= Sobre Barra Bonita ======= */
+#sobre {
+    background-color: #f8f5ff;
+}
+
+#sobre p {
+    max-width: 800px;
+    margin: 0 auto 30px;
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+.mapa {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* ======= Rodapé ======= */
+footer {
+    background-color: #744068;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+}
+
+/* ======= Responsividade ======= */
+@media (max-width: 768px) {
+
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px 20px;
+    }
+
+    .logo {
+        margin-bottom: 10px;
+    }
+
+    .menu-toggle {
+        display: inline-block;
+        margin-bottom: 10px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+        background-color: rgba(138, 85, 122, 0.7);
+        padding: 10px 0;
+        border-radius: 8px;
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition: max-height 0.4s ease, opacity 0.4s ease;
+    }
+
+    nav ul.show {
+        max-height: 300px;
+        opacity: 1;
+    }
+
+    nav a {
+        text-align: center;
+        width: 100%;
+        display: block;
+        padding: 10px 0;
+    }
+
+    .hero {
+        padding: 80px 15px;
+    }
+
+    .hero h1 {
+        font-size: 2em;
+    }
+
+    .hero p {
+        font-size: 1em;
+    }
+
+    section {
+        width: 95%;
+        padding: 40px 10px;
+    }
+
+    .cards {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
+}
