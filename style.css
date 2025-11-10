@@ -85,18 +85,20 @@ nav a:hover {
 .hero {
     position: relative;
     text-align: center;
-    background: 
-        linear-gradient(rgba(155, 48, 255, 0.25), rgba(155, 48, 255, 0.25)), 
+    background:
+        linear-gradient(rgba(155, 48, 255, 0.25), rgba(155, 48, 255, 0.25)),
         url('assets/barra-bonita.jpg') center/cover no-repeat;
     color: white;
     padding: 120px 20px;
-    transition: background 0.5s ease; /* suaviza a transição */
+    transition: background 0.5s ease;
+    /* suaviza a transição */
 }
 
 /* Efeito ao passar o mouse */
 .hero:hover {
-    background: 
-        linear-gradient(rgba(155, 48, 255, 0.35), rgba(155, 48, 255, 0.35)), /* overlay mais intenso */
+    background:
+        linear-gradient(rgba(155, 48, 255, 0.35), rgba(155, 48, 255, 0.35)),
+        /* overlay mais intenso */
         url('assets/barra-bonita.jpg') center/cover no-repeat;
 }
 
@@ -278,4 +280,13 @@ footer {
         align-items: center;
         gap: 40px;
     }
+
+    nav ul {
+        display: none;
+    }
+
+    nav ul.show {
+        display: block;
+    }
+
 }
