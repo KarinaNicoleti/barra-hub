@@ -1,21 +1,29 @@
-/* ======= Fonte e estilo geral ======= */
+/* ======= Estilo geral ======= */
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
-    background-color: #f8f5ff;
-    /* lilás bem claro */
+    background-color: #f8f5ff; /* lilás claro */
     color: #333;
+    padding-top: 80px; /* Espaço pro menu fixo */
 }
 
-/* ======= Cabeçalho ======= */
+/* ======= Cabeçalho fixo ======= */
 header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
+
     background-color: #744068;
-    /* violeta principal */
     color: white;
-    padding: 15px 40px;
+    padding: 15px 5%; /* 🔹 Use porcentagem para dar folga nas laterais */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    box-sizing: border-box; /* 🔹 Garante que o padding não estoure o layout */
 }
 
 header .logo {
@@ -30,24 +38,22 @@ nav ul {
     gap: 25px;
     margin: 0;
     padding: 0;
-    transition: all 0.3s ease;
 }
 
 nav a {
     color: white;
     text-decoration: none;
     font-weight: 500;
-    transition: 0.3s;
+    transition: color 0.3s;
 }
 
 nav a:hover {
-    color: #744068;
+    color: #ffcc00;
 }
 
 /* ======= Botão do menu mobile ======= */
 .menu-toggle {
     display: none;
-    /* desktop */
     background-color: transparent;
     border: 2px solid white;
     color: white;
@@ -62,13 +68,12 @@ nav a:hover {
 
 .menu-toggle:hover {
     background-color: rgba(236, 7, 236, 0.3);
-    border-color: #744068;
-    color: #744068;
+    border-color: #ffcc00;
+    color: #ffcc00;
 }
 
 .menu-toggle::before {
     content: "☰";
-    display: inline-block;
     margin-right: 8px;
     font-size: 1.2em;
     vertical-align: middle;
@@ -77,13 +82,12 @@ nav a:hover {
 
 .menu-toggle.open::before {
     content: "✕";
-    color: #744068;
+    color: #ffcc00;
     transform: rotate(90deg);
 }
 
 /* ======= Hero (seção principal) ======= */
 .hero {
-    position: relative;
     text-align: center;
     background:
         linear-gradient(rgba(155, 48, 255, 0.25), rgba(155, 48, 255, 0.25)),
@@ -91,17 +95,13 @@ nav a:hover {
     color: white;
     padding: 120px 20px;
     transition: background 0.5s ease;
-    /* suaviza a transição */
 }
 
-/* Efeito ao passar o mouse */
 .hero:hover {
     background:
         linear-gradient(rgba(155, 48, 255, 0.35), rgba(155, 48, 255, 0.35)),
-        /* overlay mais intenso */
         url('assets/barra-bonita.jpg') center/cover no-repeat;
 }
-
 
 .hero h1 {
     font-size: 2.5em;
@@ -148,7 +148,7 @@ section h2 {
 }
 
 .card {
-    background-color: #ffffff;
+    background-color: #fff;
     border: 1px solid #744068;
     border-radius: 12px;
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
@@ -164,7 +164,6 @@ section h2 {
     border-radius: 10px;
     object-fit: cover;
     margin-bottom: 15px;
-    /* espaço entre imagem e texto */
 }
 
 .card h3 {
@@ -180,17 +179,12 @@ section h2 {
     color: #444;
 }
 
-.card .btn {
-    display: inline-block;
-    margin-top: 10px;
-}
-
 .card:hover {
     transform: translateY(-6px);
     box-shadow: 0 6px 14px rgba(134, 12, 108, 0.2);
 }
 
-/* ======= Sobre Barra Bonita ======= */
+/* ======= Seção Sobre ======= */
 #sobre {
     background-color: #f8f5ff;
 }
@@ -217,7 +211,6 @@ footer {
 
 /* ======= Responsividade ======= */
 @media (max-width: 768px) {
-
     header {
         flex-direction: column;
         align-items: flex-start;
@@ -237,24 +230,25 @@ footer {
         flex-direction: column;
         width: 100%;
         gap: 10px;
-        background-color: rgba(138, 85, 122, 0.7);
+        background-color: rgba(138, 85, 122, 0.9);
         padding: 10px 0;
         border-radius: 8px;
         max-height: 0;
         overflow: hidden;
         opacity: 0;
         transition: max-height 0.4s ease, opacity 0.4s ease;
+        display: none;
     }
 
     nav ul.show {
+        display: block;
         max-height: 300px;
         opacity: 1;
     }
 
     nav a {
-        text-align: center;
-        width: 100%;
         display: block;
+        text-align: center;
         padding: 10px 0;
     }
 
@@ -270,23 +264,20 @@ footer {
         font-size: 1em;
     }
 
-    section {
-        width: 95%;
-        padding: 40px 10px;
-    }
-
     .cards {
         flex-direction: column;
         align-items: center;
         gap: 40px;
     }
 
-    nav ul {
-        display: none;
-    }
-
-    nav ul.show {
-        display: block;
-    }
+    /* ======= Imagens das páginas ======= */
+main img {
+    width: 100%;          /* a imagem ocupa toda a largura do container */
+    max-width: 800px;     /* largura máxima para não esticar demais em telas grandes */
+    height: auto;         /* mantém a proporção da imagem */
+    border-radius: 12px;  /* cantos arredondados */
+    display: block;       /* remove possíveis espaços abaixo da imagem */
+    margin: 0 auto 20px;  /* centraliza e dá espaço embaixo */
+}
 
 }
