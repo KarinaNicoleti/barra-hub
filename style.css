@@ -1,29 +1,27 @@
-/* ======= Estilo geral ======= */
+/* ======= Estilo Geral ======= */
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
-    background-color: #f8f5ff; /* lilás claro */
+    padding-top: 80px; /* Espaço para header fixo */
+    background-color: #f8f5ff;
     color: #333;
-    padding-top: 80px; /* Espaço pro menu fixo */
 }
 
-/* ======= Cabeçalho fixo ======= */
+/* ======= Cabeçalho ======= */
 header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 1000;
-
     display: flex;
     justify-content: space-between;
     align-items: center;
-
     background-color: #744068;
     color: white;
-    padding: 15px 5%; /* 🔹 Use porcentagem para dar folga nas laterais */
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-    box-sizing: border-box; /* 🔹 Garante que o padding não estoure o layout */
+    padding: 15px 5%;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    box-sizing: border-box;
 }
 
 header .logo {
@@ -51,10 +49,10 @@ nav a:hover {
     color: #ffcc00;
 }
 
-/* ======= Botão do menu mobile ======= */
+/* ======= Botão Menu Mobile ======= */
 .menu-toggle {
     display: none;
-    background-color: transparent;
+    background-color: #744068;
     border: 2px solid white;
     color: white;
     padding: 8px 16px;
@@ -63,11 +61,10 @@ nav a:hover {
     cursor: pointer;
     font-weight: 600;
     transition: all 0.3s ease;
-    user-select: none;
 }
 
 .menu-toggle:hover {
-    background-color: rgba(236, 7, 236, 0.3);
+    background-color: rgba(236,7,236,0.3);
     border-color: #ffcc00;
     color: #ffcc00;
 }
@@ -86,21 +83,19 @@ nav a:hover {
     transform: rotate(90deg);
 }
 
-/* ======= Hero (seção principal) ======= */
+/* ======= Hero ======= */
 .hero {
     text-align: center;
-    background:
-        linear-gradient(rgba(155, 48, 255, 0.25), rgba(155, 48, 255, 0.25)),
-        url('assets/barra-bonita.jpg') center/cover no-repeat;
+    background: linear-gradient(rgba(155,48,255,0.25), rgba(155,48,255,0.25)), 
+                url('assets/barra-bonita.jpg') center/cover no-repeat;
     color: white;
     padding: 120px 20px;
     transition: background 0.5s ease;
 }
 
 .hero:hover {
-    background:
-        linear-gradient(rgba(155, 48, 255, 0.35), rgba(155, 48, 255, 0.35)),
-        url('assets/barra-bonita.jpg') center/cover no-repeat;
+    background: linear-gradient(rgba(155,48,255,0.35), rgba(155,48,255,0.35)), 
+                url('assets/barra-bonita.jpg') center/cover no-repeat;
 }
 
 .hero h1 {
@@ -113,18 +108,21 @@ nav a:hover {
     margin-bottom: 20px;
 }
 
+/* ======= Botão ======= */
 .btn {
-    background-color: #ffcc00;
-    color: #333;
+    background-color: #744068;
+    color: white;
     padding: 10px 20px;
     border-radius: 30px;
     text-decoration: none;
     font-weight: 600;
+    display: inline-block;
     transition: 0.3s;
 }
 
 .btn:hover {
-    background-color: #ffdb4d;
+    background-color: #ffcc00;
+    color: #333;
 }
 
 /* ======= Seções ======= */
@@ -141,8 +139,8 @@ section h2 {
 /* ======= Cards ======= */
 .cards {
     display: flex;
-    justify-content: center;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 30px;
     margin-top: 30px;
 }
@@ -151,7 +149,7 @@ section h2 {
     background-color: #fff;
     border: 1px solid #744068;
     border-radius: 12px;
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
     width: 300px;
     text-align: center;
     padding: 25px;
@@ -160,9 +158,9 @@ section h2 {
 
 .card img {
     width: 100%;
-    height: 190px;
-    border-radius: 10px;
+    max-height: 200px; /* limita altura */
     object-fit: cover;
+    border-radius: 10px;
     margin-bottom: 15px;
 }
 
@@ -181,14 +179,10 @@ section h2 {
 
 .card:hover {
     transform: translateY(-6px);
-    box-shadow: 0 6px 14px rgba(134, 12, 108, 0.2);
+    box-shadow: 0 6px 14px rgba(134,12,108,0.2);
 }
 
 /* ======= Seção Sobre ======= */
-#sobre {
-    background-color: #f8f5ff;
-}
-
 #sobre p {
     max-width: 800px;
     margin: 0 auto 30px;
@@ -207,6 +201,18 @@ footer {
     color: white;
     text-align: center;
     padding: 15px 0;
+}
+
+/* ======= Imagens padrão para páginas internas ======= */
+main img {
+    width: 90%;
+    max-width: 600px;
+    max-height: 350px;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto 20px;
+    border-radius: 12px;
 }
 
 /* ======= Responsividade ======= */
@@ -230,14 +236,14 @@ footer {
         flex-direction: column;
         width: 100%;
         gap: 10px;
-        background-color: rgba(138, 85, 122, 0.9);
+        background-color: rgba(138,85,122,0.9);
         padding: 10px 0;
         border-radius: 8px;
         max-height: 0;
         overflow: hidden;
         opacity: 0;
-        transition: max-height 0.4s ease, opacity 0.4s ease;
         display: none;
+        transition: max-height 0.4s ease, opacity 0.4s ease;
     }
 
     nav ul.show {
@@ -270,14 +276,8 @@ footer {
         gap: 40px;
     }
 
-    /* ======= Imagens das páginas ======= */
-main img {
-    width: 100%;          /* a imagem ocupa toda a largura do container */
-    max-width: 800px;     /* largura máxima para não esticar demais em telas grandes */
-    height: auto;         /* mantém a proporção da imagem */
-    border-radius: 12px;  /* cantos arredondados */
-    display: block;       /* remove possíveis espaços abaixo da imagem */
-    margin: 0 auto 20px;  /* centraliza e dá espaço embaixo */
-}
-
+    main img {
+        max-width: 250px;
+        max-height: 250px;
+    }
 }

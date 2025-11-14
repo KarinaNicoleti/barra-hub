@@ -2,6 +2,6 @@ const menuToggle = document.querySelector('.menu-toggle');
 const navUl = document.querySelector('nav ul');
 
 menuToggle.addEventListener('click', () => {
-    navUl.classList.toggle('show');
     menuToggle.classList.toggle('open');
+    navUl.classList.toggle('show');
 });
