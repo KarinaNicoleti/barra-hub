@@ -9,6 +9,13 @@
     <!-- Fonte e CSS -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
+    <style>
+        /* Classe para botão ativo */
+        .btn.active {
+            background-color: #ffcc00;
+            color: #333;
+        }
+    </style>
 </head>
 
 <body>
@@ -45,14 +52,12 @@
                 <h3>Passeio de Barco</h3>
                 <p>Desfrute de um passeio de barco pelo Rio Tietê com paisagens incríveis.</p>
                 <a href="passeio-barco.html" class="btn">Saiba mais</a>
-
             </div>
             <div class="card">
                 <img src="assets/passeio2.jpg" alt="Eclusa de Barra Bonita">
                 <h3>Eclusa de Barra Bonita</h3>
                 <p>Visite a famosa eclusa e aprenda sobre a história do transporte fluvial.</p>
                 <a href="eclusa.html" class="btn">Saiba mais</a>
-
             </div>
             <div class="card">
                 <img src="assets/passeio3.jpg" alt="Natureza e trilhas">
@@ -84,33 +89,33 @@
                 <img src="assets/restaurante3.jpg" alt="Cafés e lanches">
                 <h3>Cafés e Lanches</h3>
                 <p>Delicie-se com cafés especiais e lanches artesanais.</p>
-                 <a href="cafes.html" class="btn">Saiba mais</a>
+                <a href="cafes.html" class="btn">Saiba mais</a>
             </div>
         </div>
     </section>
 
     <!-- Seção Hotéis -->
     <section id="hoteis">
-        <h2>Hotéis</h2>
-        <p>Encontre hospedagens confortáveis com vista para o rio.</p>
+        <h2>Camping </h2>
+        <p>Relaxe em espaços acolhedores com o charme natural do Rio Tietê ao seu alcance.</p>
         <div class="cards">
             <div class="card">
                 <img src="assets/hotel1.jpg" alt="Hotel confortável">
-                <h3>Hotel Central</h3>
-                <p>Hospede-se no coração da cidade com conforto e praticidade.</p>
-                <a href="#" class="btn">Saiba mais</a>
+                <h3>Próximo ao Rio</h3>
+                <p>Aproveite a localização central com conforto e facilidade para explorar tudo ao redor.</p>
+                <a href="camping.html" class="btn">Saiba mais</a>
             </div>
             <div class="card">
                 <img src="assets/hotel2.jpg" alt="Pousada charmosa">
                 <h3>Pousada do Rio</h3>
                 <p>Charmosa pousada com vista para o Rio Tietê e excelente atendimento.</p>
-                <a href="#" class="btn">Saiba mais</a>
+                <a href="pousada.html" class="btn">Saiba mais</a>
             </div>
             <div class="card">
                 <img src="assets/hotel3.jpg" alt="Hotel de luxo">
                 <h3>Hotel Luxo</h3>
                 <p>Experiência premium com serviços de primeira linha.</p>
-                <a href="#" class="btn">Saiba mais</a>
+                <a href="hotel.html" class="btn">Saiba mais</a>
             </div>
         </div>
     </section>
@@ -133,16 +138,36 @@
         <p>&copy; 2025 Barra Hub - Todos os direitos reservados.</p>
     </footer>
 
-    <!-- Script para o menu mobile -->
+    <!-- Script para o menu mobile e botões -->
     <script>
         const menuToggle = document.querySelector('.menu-toggle');
         const navUl = document.querySelector('nav ul');
+        const navLinks = document.querySelectorAll('nav ul li a'); // seleciona todos os links do menu
 
+        // Abrir/fechar menu ao clicar no botão
         menuToggle.addEventListener('click', () => {
             navUl.classList.toggle('show');
             menuToggle.classList.toggle('open');
         });
+
+        // Fechar menu ao clicar em qualquer link
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navUl.classList.remove('show');
+                menuToggle.classList.remove('open');
+            });
+        });
+
+        // Ativar o efeito amarelo ao clicar nos botões
+        const buttons = document.querySelectorAll('.btn');
+        buttons.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                buttons.forEach(b => b.classList.remove('active'));
+                e.currentTarget.classList.add('active');
+            });
+        });
     </script>
+
 </body>
 
 </html>
